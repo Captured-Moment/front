@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>순간포착 | 서울특별시 종로구 00동</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="section">
+        <div class="inner clearfix">
+            <div class="navBar float--left">
+                <div id="back-btn">Break Button</div>
+            </div>
+            <div class="navBar float--right">
+                <a href="/search/search" id="search-btn">Search Button</a>
+            </div>
+            <div class="logo">
+                <a href="/">순간포착</a>
+            </div>
+        </div>
+    </header>
+    <!-- CONTENT -->
+    <main class="view-wrap">
+        <!-- 자바스크립트로  spot 주소 받아오기 추가 -->
+        <div class="user-profile-grid">
+            <div class="photo-box">
+                <div class="inner"><img class="img-thumbnail"
+                        src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=335&q=80">
+                </div>
+            </div>
+            <div class="gap"></div>
+            <div class="username">닉네임</div>
+            <div class="text-button2">수정</div>
+            <div class="user-bio">자기소개를 입력하십시오.</div>
+        </div>
+        <!-- DB 에서 1 사용자 프로필 사진 2 사용자 닉네임, 3 사용자 자기소개, 4 게시글 위치정보, 5 게시글 날짜 6 게시글 해시태그 가져오기 -->
+        <div class="item-wrap">
+            <div class="wrap my-post-label">
+                <div class="flex-container">
+                    <span><img src="../images/marker.svg"></span>
+                    <span class="address-font">서울특별시 종로구 00동</span>
+                </div>
+                <div id="post-date">2021년 6월 28일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <a href="myIndivPost.ejs"><img class="img-thumbnail"
+                        src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="gear-btn" class="float--right"></div>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="wrap my-post-label">
+                <div class="flex-container">
+                    <span><img src="../images/marker.svg"></span>
+                    <span class="address-font">서울특별시 종로구 00동</span>
+                </div>
+                <div id="post-date">2021년 6월 28일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <a href="myIndivPost.ejs"><img class="img-thumbnail"
+                        src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="gear-btn" class="float--right"></div>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="wrap my-post-label">
+                <div class="flex-container">
+                    <span><img src="../images/marker.svg"></span>
+                    <span class="address-font">서울특별시 종로구 00동</span>
+                </div>
+                <div id="post-date">2021년 6월 28일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <a href="myIndivPost.ejs"><img class="img-thumbnail"
+                        src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="gear-btn" class="float--right"></div>
+            </div>
+        </div>
+
+    </main>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="inner">
+      
+          <div class="footer-navBar">
+            <ul class="clearfix">
+              <li><a id="main-btn" href="/">Main</a></li>
+              <li><div id="friends-btn">Search Button</div></li>
+              <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+              <li><div id="add-btn">Add Button</div></li>
+            </ul>
+          </div>
+        
+        </div>
+    </div>
+</body>
+
+</html>
