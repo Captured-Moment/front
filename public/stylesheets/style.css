@@ -1,0 +1,315 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.clearfix::after{
+content:"";
+clear: both;
+display: block;
+}
+.float--left{
+float: left;
+}
+.float--right{
+float: right;
+}
+
+.section {
+overflow: hidden;
+z-index: 100;
+position: relative;
+width: 100%;
+height: 52px;
+background: #A96280;
+}
+.section .inner {
+max-width: 980px;
+padding: 10px;
+padding-left: 15px;
+margin: 0 auto;
+box-sizing: border-box;
+position: relative;
+}
+.section .navBar {
+overflow: hidden;
+z-index: 100;
+display: flex;
+height: 100%;
+align-items: center;
+}
+#toggle-btn {
+background: url(../images/toggle-btn.svg);
+background-repeat: no-repeat;
+position:absolute;
+top:10px;
+width: 32px;
+height: 32px;
+display: block;
+text-indent: -9999px;
+}
+#search-btn {
+background: url(../images/search-btn.svg);
+background-repeat: no-repeat;
+position:absolute;
+left: 50px;
+top:10px;
+width: 32px;
+height: 32px;
+margin-left: 10px;
+display: block;
+text-indent: -9999px;
+}
+.section .inner .logo {
+background: url("../images/logo.svg");
+background-repeat: no-repeat;
+width: 30px;
+height: 30px;
+display: block;
+margin: 0px auto;
+text-indent: -9999px;
+}
+.section .inner .login {
+text-decoration: none;
+position:absolute;
+right: 15px;
+top:17px;
+display: flex;
+float: right;
+font-size: 15px;
+margin-right: 15px;
+color : #ffffff;
+}
+.section .inner .login:hover{
+color : #c4c4c4;
+}
+
+
+#map {
+position: absolute;
+display: block;
+margin: 0px;
+padding: 0px;
+top: 0px;
+left: 0px;
+overflow: visible;
+width:100%;
+height: 100%;
+}
+
+.footer {
+overflow: hidden;
+z-index: 100;
+position:fixed;
+background: #ffffff;
+left: 0;
+right: 0;
+bottom: 0;
+height:52px;
+border-top: 1px solid #A96280;
+}
+.footer .inner {
+max-width: 980px;
+padding: 10px;
+padding-left: 15px;
+margin: 0 auto;
+box-sizing: border-box;
+position: relative;
+}
+.footer .footer-navBar li {
+display: flex;  
+text-align: center;
+box-sizing: border-box;
+float: left;
+width: 25%;
+}
+
+#main-btn {
+background: url(../images/main.svg);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+display: table-cell;
+vertical-align: middle;
+text-indent: -9999px;
+margin: 0 auto;
+}
+#friends-btn {
+background: url(../images/friends.svg);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+text-indent: -9999px;
+margin: 0 auto;
+}
+.footer .mypage {
+padding: 2px;
+}
+#mypage-btn {
+background-color: #A96280;
+border-radius: 50%;
+width: 28px;
+height: 28px;
+text-indent: -9999px;
+display: block;
+margin: 0 auto;
+}
+#add-btn {
+background: url(../images/add.svg);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+text-indent: -9999px;
+margin: 0 auto;
+}
+
+#bigLogo {
+background: url(../images/BigLogo.svg);
+background-repeat: no-repeat;
+max-width: 980px;
+padding: 10px;
+padding-left: 15px;
+margin: 0 auto;
+position: relative;
+text-align: center;
+width: 80px;
+height: 80px;
+margin-top: 100px;
+}
+
+form input {
+position: relative;
+margin: 0 auto;
+width: 300px;
+height: 35px;
+border-radius: 10px;
+border: 1px solid rgba(0,0,0,0.3);
+color: #ffffff;
+display: flex;
+align-items: center;
+}
+.Pagelogin {
+margin-top: 80px;
+margin-bottom: 20px;
+}
+.password{
+margin-bottom: 20px;
+}
+
+.btn-login {
+text-align: center;
+background: #A96280;
+font-size: 15px;
+width: 306px;
+height: 39px;
+}
+.span-bar {
+text-align: center;
+margin-top: 10px;
+margin-bottom: 30px;
+font-size: 13px;
+font-weight: 300;    
+}
+
+hr {
+margin-top: 20px;
+border: solid 1px #A96280;
+background-color: #A96280;
+}
+
+.kakao-login {
+position: relative;
+width: 306px;
+height: 39px;
+margin: 0 auto;
+margin-top: 30px;
+border-radius: 10px;
+border: none;
+color: #000000;
+display: flex;
+background: #FDE500;
+font-size: 15px;
+text-align: center;
+}
+
+.section .option {
+text-align: center;
+}
+.section .back {
+border:none;
+background: url(../images/backspace.svg);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+display: block;
+margin-right: 8px;
+margin-left: 3px;
+float: left;
+text-indent: -9999px;
+}
+.section .searchInput {
+height: auto; /* 높이 초기화 */
+line-height: normal; /* line-height 초기화 */
+width: 260px;
+height: 26px;
+border-radius: 10px;
+border: 1px solid #A96280;
+}
+.section button {
+border:none;
+background: url(../images/search-btn2.svg);
+background-repeat: no-repeat;
+width: 26px;
+height: 26px;
+top: 3px;
+display: block;
+margin-left: 8px;
+margin-right: 3px;
+float: right;
+text-indent: -9999px;
+}
+.section .navBar {
+overflow: hidden;
+z-index: 100;
+display: flex;
+height: 100%;
+align-items: center;
+}
+
+.wrapper {
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100%;
+}
+
+.first {
+height: 50px;
+}
+
+.second {
+flex-grow: 1;
+height: 100%;
+}
+.second .map_wrap {
+position:relative;
+width:100%;
+height:95vh;
+}
+.second #menu_wrap {
+position:absolute;
+width:100%;
+height: 40%;
+top: 50%;
+padding:5px;
+overflow-y:auto;
+background:rgba(255, 255, 255, 1);
+z-index: 1;
+font-size:12px;
+border-radius: 10px;
+}
+
+.third {
+height: 50px;
+}
