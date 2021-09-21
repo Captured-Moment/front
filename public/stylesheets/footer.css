@@ -1,0 +1,66 @@
+
+.footer {
+    overflow: hidden;
+    z-index: 100;
+    position:fixed;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height:52px;
+    border-top: 1px solid #A96280;
+}
+.footer .inner {
+    max-width: 980px;
+    padding: 10px;
+    padding-left: 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+.footer .footer-navBar li {
+    display: flex;  
+    text-align: center;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+}
+
+#main-btn {
+    background: url(../images/main.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: table-cell;
+    vertical-align: middle;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+#friends-btn {
+    background: url(../images/friends.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    margin: 0 auto;
+}
+.footer .mypage {
+    padding: 2px;
+}
+#mypage-btn {
+    background-color: #A96280;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    text-indent: -9999px;
+    display: block;
+    margin: 0 auto;
+}
+#add-btn {
+    background: url(../images/add.svg);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999px;
+    margin: 0 auto;
+}

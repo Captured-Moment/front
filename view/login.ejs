@@ -1,0 +1,66 @@
+
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>순간포착</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+        <link rel="stylesheet" href="/stylesheets/login.css">
+        <link rel="stylesheet" href="/stylesheets/footer.css">
+    </head>
+        
+    <body>
+    
+    
+    <header class="section">
+        <div class="inner">
+            <div class="navBar float--left">
+                <button class="back1" type="button" onclick="history.go(-1);">back</button>
+            </div>
+        
+            <div>
+                <a href="/" class="logo">순간포착</a>
+            </div>
+        </div>
+    </header>
+    
+        
+    
+    <!-- LOGIN -->
+    <div>
+        <div id="bigLogo"></div>
+        <form>
+            <input class="Pagelogin" type="text" name="id" placeholder="아이디" />
+            <input class="password" type="password" name="password" placeholder="비밀번호" />
+            <input class="btn-login" type="button" value="로그인" onclick="alert('로그인시도')" />
+            <div class="span-bar">
+                <span>비밀번호 찾기</span><span>&nbsp;|&nbsp; </span>
+                <a style="text-decoration: none; color: black" href="/signup">회원가입</a>
+            </div>
+        </form>
+        <hr>
+        <input class="kakao-login" type="button" value="카카오로 로그인" onclick="alert('로그인시도')" />
+    </div>
+    
+    
+    <div class="footer">
+        <div class="inner">
+      
+          <div class="footer-navBar">
+            <ul class="clearfix">
+              <li><div id="main-btn">Main</div></li>
+              <li><div id="friends-btn">Search Button</div></li>
+              <li><div id="mypage-btn" class="mypage" role="link" tabindex="0"></div></li>
+              <li><div id="add-btn">Search Button</div></li>
+            </ul>
+          </div>
+        
+        </div>
+    </div>
+    
+    </body>
+        
+        
+</html>

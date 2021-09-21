@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>순간포착-회원가입</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<style>
+		.section .back1 {
+          /* position: absolute; */
+          float: left;
+          margin-top: 4px;
+          background: url("../images/back_white.svg");
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 40px;
+          margin-left: 7px;
+          display: block;
+          text-indent: -9999px;
+          border: 0;
+          outline: 0;
+        }
+		.mainDiv {
+			position: relative;
+			margin: 0 auto;
+			margin-top: 25px;
+			max-width: 306px;
+		}
+		.mainDiv h3{
+			position: relative;
+			text-align: center;
+			font-size: 1.7rem;
+			font-weight: 400;
+			margin-bottom: 20px;
+		}
+		.mainDiv label {
+			display: inline-block;
+			margin-left: 10px;
+			height: 20px;
+		}
+		.mainDiv input {
+			margin: 10px 0 10px 0;
+			width: 100%;
+		}
+		.mainDiv button {
+			border:none;
+			box-shadow:none;
+			display: block;
+			width: 100%;
+			height: 40px;
+			margin-top: 10px;
+			background: #A96280;
+			border-radius: 10px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    	$(function(){
+    		$("#joinForm").submit(function(){
+    			if($("#pw").val() !== $("#pw2").val()){
+    				alert("비밀번호가 다릅니다.");
+    				$("#pw").val("").focus();
+    				$("#pw2").val("");
+    				return false;
+    			}else if ($("#pw").val().length < 8) {
+    				alert("비밀번호는 8자 이상으로 설정해야 합니다.");
+    				$("#pw").val("").focus();
+    				return false;
+    			}else if($.trim($("#pw").val()) !== $("#pw").val() || $.trim($("#email").val()) !== $("#email").val() || $.trim($("#id").val()) !== $("#id").val()){
+    				alert("공백은 입력이 불가능합니다.");
+    				return false;
+    			}
+    		})
+        
+    		$("#id").keyup(function() {
+    			$.ajax({
+    				url : "../member/check_id.do",
+    				type : "POST",
+    				data : {
+    					id : $("#id").val()
+    				},
+    				success : function(result) {
+    					if (result == 1) {
+    						$("#id_check").html("중복된 아이디가 있습니다.");
+    						$("#joinBtn").attr("disabled", "disabled");
+    					} else {
+    						$("#id_check").html("");
+    						$("#joinBtn").removeAttr("disabled");
+    					}
+    				},
+    			})
+    		});
+        
+    		$("#email").keyup(function(){
+    			$.ajax({
+    				url : "./check_email.do",
+    				type : "POST",
+    				data : {
+    					email : $("#email").val()
+    				},
+    				success : function(result) {
+    					if (result == 1) {
+    						$("#email_check").html("중복된 이메일이 있습니다.");
+    					} else {
+    						$("#email_check").html("");
+    					}
+    				},
+    			})
+    		});
+    	})
+    </script>
+
+</head>
+<body>
+	<header class="section">
+		<div class="inner clearfix">
+		  <div>
+			<button class="back1" type="button" onclick="history.go(-1);">back</button>
+			<a href="/" class="logo">순간포착</a>
+		  </div>
+		</div>
+	</header>
+
+    <div class="mainDiv">
+		<div class="w3-center w3-large w3-margin-top">
+			<h3>회원가입</h3>
+		</div>
+		<div>
+			<form id="joinForm" action="./member/join_member.do" method="post">
+				<p>
+					<label>ID</label> 
+					<input type="text" id="id" name="id" required> 
+					<span id="id_check" class="w3-text-red"></span>
+				</p>
+				<p>
+					<label>Password</label> 
+					<input id="pw" name="pw" type="password" required>
+				</p>
+				<p>
+					<label>Password 확인</label> 
+					<input id="pw2" type="password" required>
+				</p>
+				<p>
+					<label>Email</label>
+					<input type="text" id="email" name="email" required placeholder="이메일 인증 후 로그인이 가능합니다.">
+					<span id="email_check" class="w3-text-red"></span>
+				</p>
+				<p>
+					<button type="submit" style="margin-top: 30px;" id="joinBtn">가입하기</button>
+					<button type="button" onclick="history.go(-1);">Cancel</button>
+				</p>
+			</form>
+		</div>
+	</div>
+
+
+	<!-- FOOTER -->
+    <div class="footer">
+        <div class="inner">
+      
+          <div class="footer-navBar">
+            <ul class="clearfix">
+              <li><a id="main-btn" href="/">Main</a></li>
+              <li><div id="friends-btn">Search Button</div></li>
+              <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+              <li><div id="add-btn">Add Button</div></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+	
+</body>
+</html>

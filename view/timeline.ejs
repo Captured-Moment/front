@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<!-- 스팟타임라인 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>순간포착 | 서울특별시 종로구 00동</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="section">
+        <div class="inner clearfix">
+            <div class="navBar float--left">
+                <div id="back-btn">Break Button</div>
+            </div>
+            <div class="navBar float--right">
+                <div id=search-btn>Search Button</div>
+            </div>
+            <div class="logo">
+                <a href="#">순간포착</a>
+            </div>
+        </div>
+    </header>
+    <!-- CONTENT -->
+    <main class="view-wrap">
+        <!-- 자바스크립트로  spot 주소 받아오기 추가 -->
+        <div class="spot-profile-grid">
+            <div class="photo-box">
+                <div class="inner"><img class="img-thumbnail"
+                        src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></div>
+            </div>
+            <!-- 아래 버튼을 지도와 목록 토글키로 바꾸기 -->
+            <div class="text-button">지도에서 보기</div>
+            <div class="void-box rounded wrap flex-container">
+                <span><img src="../images/marker.svg"></span>
+                <span class="address-font">서울특별시 종로구 00동</span>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="wrap clearfix">
+                <!-- DB 에서 1 게시자 프사, 2 게시자 이름, 3 게시 날짜, 4 게시글 사진, 5 게시글 태그, 6 좋아요 등록정보 7 게시글 내용 가져오기 -->
+                <div id="post-profile-photo" class="content float--left">profile photo</div>
+                <div id="post-profile-name" class="content float--left">홍길동</div>
+                <div id="post-date" class="float--right">2021년 6월 25일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <img class="img-thumbnail" src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg">
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="like-btn" class="float--right"></div>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="wrap clearfix">
+                <!-- DB 에서 1 게시자 프사, 2 게시자 이름, 3 게시 날짜, 4 게시글 사진, 5 게시글 태그, 6 좋아요 등록정보 7 게시글 내용 가져오기 -->
+                <div id="post-profile-photo" class="content float--left">profile photo</div>
+                <div id="post-profile-name" class="content float--left">홍길동</div>
+                <div id="post-date" class="float--right">2021년 6월 25일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <img class="img-thumbnail" src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg">
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="like-btn" class="float--right"></div>
+            </div>
+        </div>
+        <div class="item-wrap">
+            <div class="wrap clearfix">
+                <!-- DB 에서 1 게시자 프사, 2 게시자 이름, 3 게시 날짜, 4 게시글 사진, 5 게시글 태그, 6 좋아요 등록정보 7 게시글 내용 가져오기 -->
+                <div id="post-profile-photo" class="content float--left">profile photo</div>
+                <div id="post-profile-name" class="content float--left">홍길동</div>
+                <div id="post-date" class="float--right">2021년 6월 25일</div>
+            </div>
+            <div class="wrap timeline-photo">
+                <img class="img-thumbnail" src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg">
+            </div>
+            <div class="wrap clearfix">
+                <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
+                <div id="like-btn" class="float--right"></div>
+            </div>
+        </div>
+        <div id="add-post-btn">add post</div>
+    </main>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="inner">
+      
+          <div class="footer-navBar">
+            <ul class="clearfix">
+              <li><a id="main-btn" href="/">Main</a></li>
+              <li><div id="friends-btn">Search Button</div></li>
+              <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+              <li><div id="add-btn">Add Button</div></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+</body>
+
+</html>
