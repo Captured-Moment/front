@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="/stylesheets/style2.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,16 +43,14 @@
         </div>
         <div class="myPage-tab">
             <ul class="myPage-tab-container">
-                <li><input id="add-btn" type="button"></input></li>
-                <li><input id="main-btn" type="button"></input></li>
+                <li><button id="post-list-btn" type="button"></button></li>
+                <li><button id="my-map-btn" type="button"></button></li>
             </ul>
         </div>
 
-        <div id="my-map">
-
-        </div>
+        <div class="my-map-cont"><div id="my-map"></div></div>
         <!-- DB 에서 1 사용자 프로필 사진 2 사용자 닉네임, 3 사용자 자기소개, 4 게시글 위치정보, 5 게시글 날짜 6 게시글 해시태그 가져오기 -->
-        <div class="timeline-tab">
+        <div class="timeline-tab active">
             <div class="item-wrap">
                 <div class="wrap my-post-label">
                     <div class="flex-container">
@@ -123,15 +119,35 @@
     </div>
 
     <script>
-        var mapContainer = document.getElementById('my-map'), // 지도를 표시할 div 
-            mapOption = {
-                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
-            };
+        const myPostBtn = document.querySelector('#post-list-btn')
+        const myMapBtn = document.querySelector('#my-map-btn')
+        const myPostList = document.querySelector('.timeline-tab')
+        const myMap = document.querySelector('.my-map-cont')
 
-        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        myPostBtn.addEventListener('click', () => {
+            if (myPostList.className === 'timeline-tab'){
+                myPostList.classList.toggle('active');
+                myMap.classList.toggle('active');
+            } else {location.href="#";}
+        })
+        myMapBtn.addEventListener('click', () => {
+            if (myMap.className === 'my-map-cont'){
+                myPostList.classList.toggle('active');
+                myMap.classList.toggle('active');
+            } else {location.href="#";}
+        })
+    </script>
+    <!-- 지도 띄우기 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
+    <script>
+        var mapContainer = document.getElementById('my-map'), 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                level: 3
+            };
         var map = new kakao.maps.Map(mapContainer, mapOption);
-        // 마커가 표시될 위치입니다 
+        // 마커가 표시될 위치입니다
+        // *** 수정하기 => 마이페이지 유저포스트에 해당하는 위치 리스트 배열로 파싱
         var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
 
         // 마커를 생성합니다
