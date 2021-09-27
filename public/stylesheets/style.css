@@ -1,0 +1,188 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.float--left{
+  float: left;
+}
+.float--right{
+  float: right;
+}
+
+.section {
+overflow: hidden;
+z-index: 100;
+position: relative;
+width: 100%;
+height: 52px;
+background: #A96280;
+}
+.section .inner {
+  max-width: 980px;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.section .navBar {
+overflow: hidden;
+z-index: 100;
+display: flex;
+height: 100%;
+align-items: center;
+}
+#toggle-btn {
+background: url(../images/toggle-btn.svg);
+background-repeat: no-repeat;
+position:absolute;
+top:10px;
+width: 32px;
+height: 32px;
+display: block;
+text-indent: -9999px;
+}
+#search-btn {
+background: url(../images/search-btn.svg);
+background-repeat: no-repeat;
+position:absolute;
+left: 50px;
+top:10px;
+width: 32px;
+height: 32px;
+margin-left: 10px;
+display: block;
+text-indent: -9999px;
+}
+.section .inner .logo {
+background: url("../images/logo.svg");
+background-repeat: no-repeat;
+width: 30px;
+height: 30px;
+display: block;
+margin: 0px auto;
+text-indent: -9999px;
+}
+.section .inner .login {
+text-decoration: none;
+position:absolute;
+right: 15px;
+top:17px;
+display: flex;
+float: right;
+font-size: 15px;
+margin-right: 15px;
+color : #ffffff;
+}
+.section .inner .login:hover{
+color : #c4c4c4;
+}
+.section .inner .back1 {
+background: url("../images/back_white.svg");
+background-repeat: no-repeat;
+width: 30px;
+top: 0;
+height: 30px;
+display: block;
+text-indent: -9999px;
+}
+
+#map {
+position: absolute;
+display: block;
+margin: 0px;
+padding: 0px;
+top: 0px;
+left: 0px;
+overflow: visible;
+width:100%;
+height: 100%;
+}
+
+form input {
+position: relative;
+margin: 0 auto;
+width: 300px;
+height: 35px;
+border-radius: 10px;
+border: 1px solid rgba(0,0,0,0.3);
+color: #ffffff;
+display: flex;
+align-items: center;
+}
+
+.section .option {
+text-align: center;
+}
+
+.section .back {
+border:none;
+background: url(../images/backspace.svg);
+background-repeat: no-repeat;
+width: 32px;
+height: 32px;
+display: block;
+margin-right: 8px;
+margin-left: 3px;
+float: left;
+text-indent: -9999px;
+}
+.section .searchInput {
+height: auto; /* 높이 초기화 */
+line-height: normal; /* line-height 초기화 */
+width: 260px;
+height: 26px;
+border-radius: 10px;
+border: 1px solid #A96280;
+}
+.section button {
+border:none;
+background: url(../images/search-btn2.svg);
+background-repeat: no-repeat;
+width: 26px;
+height: 26px;
+top: 3px;
+display: block;
+margin-left: 8px;
+margin-right: 3px;
+float: right;
+text-indent: -9999px;
+}
+.wrapper {
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100%;
+}
+
+.first {
+height: 50px;
+}
+
+.second {
+flex-grow: 1;
+height: 100%;
+}
+
+.second .map_wrap {
+position:relative;
+width:100%;
+height:95vh;
+}
+.second #menu_wrap {
+position:absolute;
+width:100%;
+height: 40%;
+top: 50%;
+padding:5px;
+overflow-y:auto;
+background:rgba(255, 255, 255, 1);
+z-index: 1;
+font-size:12px;
+border-radius: 10px;
+}
+
+.third {
+height: 50px;
+}
