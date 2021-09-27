@@ -56,8 +56,8 @@
     display: block;
     margin: 0 auto;
 }
-#add-btn {
-    background: url(../images/add.svg);
+#setting-btn {
+    background: url(../images/toggle-btn.svg);
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
