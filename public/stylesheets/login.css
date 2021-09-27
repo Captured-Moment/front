@@ -86,18 +86,17 @@ form input {
     height: 39px;
 }
 .span-bar {
+    margin: 0 auto;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 30px;
     font-size: 13px;
     font-weight: 300;    
+    width: 320px;
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #c4c4c4;
 }
 
-hr {
-    margin-top: 20px;
-    border: solid 1px #fff;
-    background-color: #A96280;
-}
 
 .kakao-login {
     position: relative;

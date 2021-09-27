@@ -25,38 +25,98 @@
           border: 0;
           outline: 0;
         }
-		.mainDiv {
-			position: relative;
+		.section2 {
+			max-width: 380px;
+			margin: auto;
+		}
+		.section2 .bodyDiv {
+			display: flex;
+			/* top: 52px; */
+			height: 82vh;
+			max-width: 90vw;
 			margin: 0 auto;
-			margin-top: 25px;
-			max-width: 306px;
 		}
-		.mainDiv h3{
+		.section2 .bodyDiv .mainDiv {
 			position: relative;
-			text-align: center;
-			font-size: 1.7rem;
-			font-weight: 400;
-			margin-bottom: 20px;
+			width: 100%;
+			margin: 0 auto;
+			margin-top: 15px;
 		}
-		.mainDiv label {
+		.section2 .bodyDiv .mainDiv .label1 {
 			display: inline-block;
 			margin-left: 10px;
-			height: 20px;
+			margin-top: 3px;
+			height: 15px;
 		}
-		.mainDiv input {
-			margin: 10px 0 10px 0;
+		.section2 .bodyDiv .mainDiv .input1 {
+			margin: 4px 0 4px 0;
 			width: 100%;
+			color: black;
 		}
-		.mainDiv button {
+		.section2 .bodyDiv .mainDiv .buttonP{
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+		}
+		.section2 .bodyDiv .mainDiv .buttonP button {
+			position: relative;
 			border:none;
 			box-shadow:none;
 			display: block;
 			width: 100%;
-			height: 40px;
-			margin-top: 10px;
+			height: 35px;
+			margin-top:10px;
+			bottom: 0;
+			color: white;
 			background: #A96280;
 			border-radius: 10px;
 		}
+		.section2 .bodyDiv .mainDiv .filebox input[type="file"] { 
+			position: absolute; 
+			width: 1px; 
+			height: 1px; 
+			padding: 0; 
+			margin: -1px; 
+			overflow: hidden; 
+			clip:rect(0,0,0,0); 
+			border: 0; 
+		}
+		.section2 .bodyDiv .mainDiv .filebox label { 
+			display: inline-block; 
+			width: 15%;
+			height: 35px; 
+			text-align: center;
+			margin-top: 8px;
+			margin-left: 1%;
+			padding-top: 8px;
+			color: #999; 
+			font-size: 13px; 
+			line-height: normal; 
+			vertical-align: middle; 
+			background-color: #fdfdfd; 
+			cursor: pointer; 
+			border: 1px solid rgba(0,0,0,0.3);
+			border-radius: 10px; 
+		}
+		 /* named upload */ 
+		.section2 .bodyDiv .mainDiv .filebox .upload-name { 
+			display: inline-block;
+			width: 82%;
+			height: 35px;
+			margin-top: 8px;
+			padding: .5em .75em; /* label의 패딩값과 일치 */ 
+			font-size: inherit; 
+			line-height: normal; 
+			vertical-align: middle; 
+			border: 1px solid rgba(0,0,0,0.3);
+			color: #999; 
+			border-radius: 10px; 
+			/* -webkit-appearance: none; 네이티브 외형 감추기 
+			-moz-appearance: none; 
+			appearance: none;  */
+		}
+
+
 	</style>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
     <script>
@@ -71,10 +131,11 @@
     				alert("비밀번호는 8자 이상으로 설정해야 합니다.");
     				$("#pw").val("").focus();
     				return false;
-    			}else if($.trim($("#pw").val()) !== $("#pw").val() || $.trim($("#email").val()) !== $("#email").val() || $.trim($("#id").val()) !== $("#id").val()){
-    				alert("공백은 입력이 불가능합니다.");
-    				return false;
     			}
+				// else if($.trim($("#pw").val()) !== $("#pw").val() || $.trim($("#email").val()) !== $("#email").val() || $.trim($("#id").val()) !== $("#id").val()){
+    			// 	alert("공백은 입력이 불가능합니다.");
+    			// 	return false;
+    			// }
     		})
         
     		$("#id").keyup(function() {
@@ -112,6 +173,21 @@
     				},
     			})
     		});
+			$(document).ready(function(){ 
+				var fileTarget = $('.filebox .upload-hidden'); 
+				fileTarget.on('change', function(){
+					// 값이 변경되면 
+					if(window.FileReader){ // modern browser 
+						var filename = $(this)[0].files[0].name; 
+					} else { // old IE 
+						var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출 
+					} 
+					
+					// 추출한 파일명 삽입 
+					$(this).siblings('.upload-name').val(filename); 
+				}); 
+			});
+
     	})
     </script>
 
@@ -125,39 +201,54 @@
 		  </div>
 		</div>
 	</header>
-
-    <div class="mainDiv">
-		<div class="w3-center w3-large w3-margin-top">
-			<h3>회원가입</h3>
-		</div>
-		<div>
-			<form id="joinForm" action="./member/join_member.do" method="post">
+<div class="section2">
+    <div class="bodyDiv">
+		
+		<div class="mainDiv">
+			<form id="joinForm" action="./member/join_member.do" method="post" enctype="multipart/form-data">
 				<p>
-					<label>ID</label> 
-					<input type="text" id="id" name="id" required> 
+					<label class="label1">Nickname</label> 
+					<input class="input1" type="text" name="nickname" required> 
+				</p>
+				<p>
+					<label class="label1">name</label> 
+					<input class="input1" type="text" name="name" required> 
+				</p>
+				<p>
+					<label class="label1">ID(Email)</label> 
+					<input  class="input1" type="email" id="id" name="id" required> 
 					<span id="id_check" class="w3-text-red"></span>
 				</p>
 				<p>
-					<label>Password</label> 
-					<input id="pw" name="pw" type="password" required>
+					<label class="label1">Password</label> 
+					<input class="input1" id="pw" name="pw" type="password" required>
 				</p>
 				<p>
-					<label>Password 확인</label> 
-					<input id="pw2" type="password" required>
+					<label class="label1">Password 확인</label> 
+					<input class="input1" id="pw2" type="password" required>
 				</p>
 				<p>
-					<label>Email</label>
-					<input type="text" id="email" name="email" required placeholder="이메일 인증 후 로그인이 가능합니다.">
-					<span id="email_check" class="w3-text-red"></span>
+					<label class="label1">Profile</label>
+					<p class="filebox">
+						<input class="upload-name" value="파일선택" disabled="disabled">
+						<label for="ex_filename">업로드</label>
+						<input type="file" id="ex_filename" class="upload-hidden">
+					</p>
 				</p>
+				
 				<p>
-					<button type="submit" style="margin-top: 30px;" id="joinBtn">가입하기</button>
+					<label class="label1">Comment</label> 
+					<input class="input1" type="text">
+				</p>
+
+				<p class="buttonP">
+					<button type="submit" id="joinBtn">가입하기</button>
 					<button type="button" onclick="history.go(-1);">Cancel</button>
 				</p>
 			</form>
 		</div>
 	</div>
-
+</div>
 
 	<!-- FOOTER -->
     <div class="footer">
