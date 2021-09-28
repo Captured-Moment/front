@@ -20,56 +20,66 @@ app.set('view engine', 'ejs'); // ejs를 html로 바꿔주면 html로 파일 실
 
 
 
-app.get('/', function(req, res) { // 웹에서 실행할 주소가 localhost:3000/ 이거일때를 선언
+app.get('/', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/ 이거일때를 선언
 
     res.render('main.ejs'); // first.ejs로 써도 되고 first만 써도 파일 실행을 해줍니다.
 });
 
 
-app.get('/login', function(req, res) { // 웹에서 실행할 주소가 localhost:3000/ 이거일때를 선언
+app.get('/login', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/ 이거일때를 선언
 
     res.render('login.ejs'); // first.ejs로 써도 되고 first만 써도 파일 실행을 해줍니다.
 });
 
-app.get('/search',function(req,res){ // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+app.get('/search', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     res.render('search.ejs'); // render를 이용해서 값을 던져줌
-    
+
 });
-app.get('/signup',function(req,res){ // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+app.get('/signup', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     res.render('signUp.ejs'); // render를 이용해서 값을 던져줌
-    
+
 });
 
-app.get('/mypage/:something',function(req,res){ // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+app.get('/mypage/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     // something에 던질 데이터를 넣어준 것임
-    
+
     var something = req.params.something;
-    
-    res.render('mypage.ejs',{data:something}); // render를 이용해서 값을 던져줌
-    
+
+    res.render('mypage.ejs', { data: something }); // render를 이용해서 값을 던져줌
+
 });
 
-app.get('/timeline/:something',function(req,res){ // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+app.get('/timeline/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     // something에 던질 데이터를 넣어준 것임
-    
+
     var something = req.params.something;
-    
-    res.render('timeline.ejs',{data:something}); // render를 이용해서 값을 던져줌
-    
+
+    res.render('timeline.ejs', { data: something }); // render를 이용해서 값을 던져줌
+
 });
 
-app.get('/newpost/:something',function(req,res){ // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+app.get('/newpost/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     // something에 던질 데이터를 넣어준 것임
-    
+
     var something = req.params.something;
-    
-    res.render('newPost.ejs',{data:something}); // render를 이용해서 값을 던져줌
-    
+
+    res.render('newPost.ejs', { data: something }); // render를 이용해서 값을 던져줌
+
+});
+
+app.get('/myaccount/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+
+    // something에 던질 데이터를 넣어준 것임
+
+    var something = req.params.something;
+
+    res.render('myAccount.ejs', { data: something }); // render를 이용해서 값을 던져줌
+
 });
 
 app.listen(3000); //server 구동 포트 localhost:3000 여기에 쓰입니다.

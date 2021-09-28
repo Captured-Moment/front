@@ -1,26 +1,24 @@
 // 마커가 표시될 위치입니다
-// *** 수정하기 => 마이페이지 유저포스트에 해당하는 위치 리스트 배열로 파싱
-// var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+// *** 유저가 올린 게시글 위치 받아오기
 
-
-let mySpotLat = [];
-let mySpotLng = [];
-var myMarkerPosition = [];
-for (i = 0; i < mySpotLat.length; i++) {
-    myMarkerPosition = myMarkerPosition.push(new kakao.maps.LatLng(mySpotLat[i], mySpotLat[i]));
+var positions = [
+    {
+        title: '이태원',
+        address: '서울특별시 ㅇㅇ로 nn',
+        latlng: new kakao.maps.LatLng(37.5348667934032, 126.99458761280985)
+    },
+    {
+        title: '이태원',
+        address: '서울특별시 ㅇㅇ로 nn',
+        latlng: new kakao.maps.LatLng(37.5348667934032, 126.99458761280985)
+    }
+]
+for (i in positions) {
+    var marker = new kakao.maps.Marker({
+        map: map, //마커를 표시할 지도 #my-map
+        position: positions[i].latlng,
+        title: positions[i].title
+    });
 }
-
-
-
-// 마커를 생성합니다
-// var marker = new kakao.maps.Marker({
-//     position: markerPosition
-// });
-for (i = 0; i < myMarkerPosition.length; i++) {
-    var marker = new kako.maps.Marker({
-        position: myMarkerPosition[i];
-    })
-}
-
 // 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
+// marker.setMap(map);

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>순간포착 | 서울특별시 종로구 00동</title>
+    <title>순간포착 | 마이페이지</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="/stylesheets/style2.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
@@ -22,9 +22,6 @@
             <div class="navBar float--left">
                 <div id="break-btn" onclick="location.href='/'" >Break Button</div>
             </div>
-            <div class="navBar float--right">
-                <div id=search-btn>Search Button</div>
-            </div>
             <div class="logo">
                 <a href="#">순간포착</a>
             </div>
@@ -32,7 +29,7 @@
     </header>
     <!-- CONTENT -->
     <main class="view-wrap-new">
-        <!-- 자바스크립트로  spot 주소 받아오기 추가 -->
+        <!-- data 요청 1.유저 프로필사진 2. 닉네임 3. 자기소개-->
         <div class="user-profile-grid">
             <div class="photo-box">
                 <div class="inner"><img class="img-thumbnail"
@@ -41,7 +38,8 @@
             </div>
             <div class="gap"></div>
             <div class="username">닉네임</div>
-            <div class="text-button2">수정</div>
+            <!-- ** 수정페이지로 이동시키기 -->
+            <div class="text-button2" onclick="location.href='/'">수정</div>
             <div class="user-bio">자기소개를 입력하십시오.</div>
         </div>
         <div class="myPage-tab">
