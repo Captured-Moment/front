@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="/stylesheets/style2.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script defer src="/javascript/newPost.js"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,12 +31,25 @@
             </div>
         </div>
     </header>
+    <script>
+        var geocoder = new kakao.maps.services.Geocoder();
+
+        var coord = new kakao.maps.LatLng(37.56496830314491, 126.93990862062978);
+        var callback = function (result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+                console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
+            }
+        };
+
+        geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+    </script>
     <main>
         <div class="view-wrap">
             <div class="content">
-                <div class="new-photo wrap flex-container">
-                    <input id="add-btn-ctr" type="file" accept="image/gif, image/jpeg, image/png">
+                <div class="new-photo wrap">
+                    <div class="inner"><img id="preview" src="#" alt=""></div>
                 </div>
+                <input class="wrap" type="file" accept="image/*" onchange="loadFile(event)">
                 <div class="wrap">
                     <!-- 스팟 현재 위치 받아오기 -->
                     <div class="semi-title">위치</div>
@@ -52,21 +69,6 @@
             </div>
         </div>
     </main>
-
-    <!-- FOOTER -->
-    <div class="footer">
-        <div class="inner">
-    
-            <div class="footer-navBar">
-                <ul class="clearfix">
-                    <li><a id="main-btn" href="/">Main</a></li>
-                    <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
-                    <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
-                    <li><a href="#" id="setting-btn">Setting</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <script>
         $(document).ready(function () {
             $('#photo-exp-box').on('keyup', function () {
@@ -78,43 +80,21 @@
             });
         });
     </script>
-    <script>
-        
-    </script>
 
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="inner">
 
-    <!-- <script>
-        // 지도를 생성합니다    
-        var map = new kakao.maps.Map(mapContainer, mapOption);
-
-        // 주소-좌표 변환 객체를 생성합니다
-        var geocoder = new kakao.maps.services.Geocoder();
-
-        // 주소로 좌표를 검색합니다
-        geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function (result, status) {
-
-            // 정상적으로 검색이 완료됐으면 
-            if (status === kakao.maps.services.Status.OK) {
-
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-                // 결과값으로 받은 위치를 마커로 표시합니다
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: coords
-                });
-
-                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                var infowindow = new kakao.maps.InfoWindow({
-                    content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-                });
-                infowindow.open(map, marker);
-
-                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                map.setCenter(coords);
-            }
-        });
-    </script> -->
+            <div class="footer-navBar">
+                <ul class="clearfix">
+                    <li><a id="main-btn" href="/">Main</a></li>
+                    <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
+                    <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+                    <li><a href="#" id="setting-btn">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
