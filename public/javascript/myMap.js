@@ -1,12 +1,16 @@
+//#my-map 마이페이지에 지도 생성하기
 var mapContainer = document.getElementById('my-map'),
     mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667),
         level: 3
     };
 var map = new kakao.maps.Map(mapContainer, mapOption);
+
+
 // 마커가 표시될 위치입니다
 // *** 수정하기 => 마이페이지 유저포스트에 해당하는 위치 리스트 배열로 파싱
 var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
 
 // 마커를 생성합니다
 var marker = new kakao.maps.Marker({

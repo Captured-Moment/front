@@ -545,7 +545,11 @@ textarea {
   left: calc(50% -168px);
   width: 336px;
   height: calc(100vh - 266px);
-  overflow: scroll;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.timeline-tab::-webkit-scrollbar {
+  display: none;
 }
 .timeline-tab.active {
   display: inherit;
