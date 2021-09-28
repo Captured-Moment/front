@@ -100,20 +100,6 @@ width:100%;
 height: 100%;
 }
 
-#bigLogo {
-background: url(../images/BigLogo.svg);
-background-repeat: no-repeat;
-max-width: 980px;
-padding: 10px;
-padding-left: 15px;
-margin: 0 auto;
-position: relative;
-text-align: center;
-width: 80px;
-height: 80px;
-margin-top: 80px;
-}
-
 form input {
 position: relative;
 margin: 0 auto;
@@ -125,53 +111,11 @@ color: #ffffff;
 display: flex;
 align-items: center;
 }
-.Pagelogin {
-margin-top: 80px;
-margin-bottom: 20px;
-}
-.password{
-margin-bottom: 20px;
-}
-
-.btn-login {
-text-align: center;
-background: #A96280;
-font-size: 15px;
-width: 306px;
-height: 39px;
-}
-.span-bar {
-text-align: center;
-margin-top: 10px;
-margin-bottom: 30px;
-font-size: 13px;
-font-weight: 300;    
-}
-
-hr {
-margin-top: 20px;
-border: solid 1px #A96280;
-background-color: #A96280;
-}
-
-.kakao-login {
-position: relative;
-width: 306px;
-height: 39px;
-margin: 0 auto;
-margin-top: 30px;
-border-radius: 10px;
-border: none;
-color: #000000;
-display: flex;
-background: #FDE500;
-font-size: 15px;
-text-align: center;
-}
 
 .section .option {
 text-align: center;
 }
+
 .section .back {
 border:none;
 background: url(../images/backspace.svg);
@@ -220,6 +164,7 @@ height: 50px;
 flex-grow: 1;
 height: 100%;
 }
+
 .second .map_wrap {
 position:relative;
 width:100%;
