@@ -1,23 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>순간포착 | 회원정보 수정</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script defer src="/javascript/myAccount.js"></script>
+
 </head>
+
 <body>
-    <script>
-        var geocoder = new kakao.maps.services.Geocoder();
+    <!-- HEADER -->
+    <header class="section">
+        <div class="inner clearfix">
+            <div class="navBar float--left">
+                <div>
+                    <a id="back-btn" href="/mypage/mypage">Back Button</a>
+                </div>
+            </div>
+            <div class="navBar float--right">
+                <div>
+                    <a id="break-btn" href="/">Break Button</a>
+                </div>
+            </div>
 
-        var coord = new kakao.maps.LatLng(37.56496830314491, 126.93990862062978);
-        var callback = function (result, status) {
-            if (status === kakao.maps.services.Status.OK) {
-                console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
-            }
-        };
+            <div class="logo">
+                <a href="/">순간포착</a>
+            </div>
+        </div>
+    </header>
+    <!-- CONTENT -->
+    <main class="view-wrap">
+        <div class="title wrap">회원정보 수정</div>
+        <div class="new-photo wrap">
+            <div class="inner"><img id="preview" src="#" alt=""></div>
+        </div>
+        <div class="filebox wrap">
+            <input class="upload-name" value="파일을 업로드하십시오" disabled="disabled">
+            <label for="ex_filename">사진 선택</label>
+            <input id="ex_filename" class="upload-hidden" type="file" accept="image/*"
+                onchange="loadFile(event)">
+        </div>
+        <div class="wrap">
+            <label for="name" class="semi-title">이름</label>
+            <input type="text" id="name" name="name" class="void-box" required>
+        </div>
+        <div class="wrap">
+            <label for="nickname" class="semi-title">닉네임</label>
+            <input type="text" name="nickname" class="void-box" required>
+        </div>
+        <div class="wrap">
+            <label for="id" class="semi-title">E-mail</label>
+            <input type="email" name="id" class="void-box" required>
+        </div>
+        <div class="wrap">
+            <label for="pw" class="semi-title">비밀번호</label>
+            <input type="password" name="pw" class="void-box" required>
+        </div>
+        <div class="wrap">
+            <label for="pw" class="semi-title">비밀번호 확인</label> 
+			<input type="password" name="pw-confirm" class="void-box" required>
+        </div>
+        <div class="wrap">
+            <label for="user-bio" class="semi-title">인사말</label>
+            <textarea id="exp-box" name="user-bio" cols="30" rows="10"
+                placeholder="인사말을 입력하시오. (최대 100자)"></textarea>
+            <div id="text-cnt">(0 / 100)</div>
+        </div>
+        <input type="submit" formaction="#" formenctype=".*" value="저장" class="void-box button wrap"></input>
 
-        geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-    </script>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="inner">
+            <div class="footer-navBar">
+                <ul class="clearfix">
+                    <li><a id="main-btn" href="/">Main</a></li>
+                    <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
+                    <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+                    <li><a href="#" id="setting-btn">Setting</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>

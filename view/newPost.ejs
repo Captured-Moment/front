@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>순간포착|새로운 게시글 추가</title>
+    <title>순간포착 | 새로운 게시글 추가</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
     <link rel="stylesheet" href="/stylesheets/style2.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
-    <script defer src="/javascript/newPost.js"></script>
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e&libraries=services"></script>
+    <script defer src="/javascript/newPost.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+
 
 </head>
 
@@ -47,32 +46,42 @@
                 <div class="filebox wrap">
                     <input class="upload-name" value="파일을 업로드하십시오" disabled="disabled">
                     <label for="ex_filename">사진 선택</label>
-                    <input id="ex_filename" class="upload-hidden" type="file" accept="image/*" onchange="loadFile(event)">
+                    <input id="ex_filename" class="upload-hidden" type="file" accept="image/*"
+                        onchange="loadFile(event)">
                 </div>
                 <div class="wrap">
                     <!-- 스팟 현재 위치 받아오기 -->
-                    <div class="semi-title">위치</div>
-                    <input class="void-box" placeholder="장소를 입력하시오">
+                    <label for="address" class="semi-title">위치</ㅣ>
+                    <div id="spot-addr" class="void-box"></div>
                 </div>
                 <div class="wrap">
-                    <div class="semi-title">해시태그</div>
-                    <input class="void-box" placeholder="해시태그를 입력하시오 (최대 3개)">
+                    <label for="hashtag" class="semi-title">해시태그</label>
+                    <select name="hashtag" id="hashtag" class="void-box" onchange="addTag()">
+                        <option value="">해시태그를 입력하시오 (최대 3개)</option>
+                        <option value="풍경">풍경</option>
+                        <option value="일상">일상</option>
+                        <option value="건축">건축</option>
+                        <option value="인물">인물</option>
+                        <option value="자연">자연</option>
+                        <option value="바다">바다</option>
+                        <option value="스냅샷">스냅샷</option>
+                    </select>
+                    <div>
+                        <ul class="hashtags"></ul>
+                    </div>
                 </div>
                 <div class="wrap">
-                    <div class="semi-title">설명</div>
-                    <textarea id="photo-exp-box" name="photo-exp" cols="30" rows="10"
+                    <label for="photo-exp" class="semi-title">설명</label>
+                    <textarea id="exp-box" name="photo-exp" cols="30" rows="10"
                         placeholder="사진을 설명하시오 (최대 140자)"></textarea>
                     <div id="text-cnt">(0 / 140)</div>
                 </div>
-                <input type="submit" formaction="#" formenctype=".*" value="저장" class="void-box button wrap"></input>
+                <input type="submit" formaction="#" formenctype=".*" value="저장" class="void-box button wrap">
             </div>
         </div>
     </main>
-    
-
-
     <!-- FOOTER -->
-    <div class="footer">
+    <footer class="footer">
         <div class="inner">
 
             <div class="footer-navBar">
@@ -80,11 +89,11 @@
                     <li><a id="main-btn" href="/">Main</a></li>
                     <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
                     <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
-                    <li><a href="/newpost/newpost" id="add-btn">Add Btn</a></li>
+                    <li><a href="#" id="add-btn">Add Btn</a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
 
 </html>

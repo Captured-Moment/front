@@ -1,3 +1,5 @@
+//1. 사진 업로드
+// 1-1. 사진 미리보기
 var loadFile = function (event) {
     var output = document.getElementById('preview');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -5,15 +7,7 @@ var loadFile = function (event) {
         URL.revokeObjectURL(output.src) // free memory
     }
 };
-$(document).ready(function () {
-    $('#photo-exp-box').on('keyup', function () {
-        $('#text-cnt').html("(" + $(this).val().length + " / 140)");
-        if ($(this).val().length > 140) {
-            $(this).val($(this).val().substring(0, 140));
-            $('#text-cnt').html("(140 / 140)");
-        }
-    });
-});
+// 1-2. 사진 업로드 파일명 표출
 $(document).ready(function () {
     var fileTarget = $('.filebox .upload-hidden');
     fileTarget.on('change', function () {
@@ -28,4 +22,110 @@ $(document).ready(function () {
         $(this).siblings('.upload-name').val(filename);
     });
 });
+//2. 주소표출 (좌표값=>주소로 변환하여 표출)
+var geocoder = new kakao.maps.services.Geocoder();
+
+var coord = new kakao.maps.LatLng(37.58034780425315, 126.97711709628018);
+var callback = function (result, status) {
+    if (status === kakao.maps.services.Status.OK) {
+        const element = document.getElementById('spot-addr');
+        element.textContent = result[0].address.address_name;
+    }
+};
+
+geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+//3. 해시태그 리스트로 선택하여 추가하기
+const items = document.querySelector('.hashtags');
+const input = document.querySelector('#hashtag');
+function addTag() {
+    const text = input.value;
+    if (text !== '') {
+        const item = createItem(text);
+        items.appendChild(item);
+    }
+}
+//수정해야할 부분
+// 같은 해시태그 있으면 아무 변화 없게 하기
+// 해시태그 수 3개 이상 제한.. 경고창..
+// 불리언변수로 함수조건 설정하기
+// 해시태그 디자인
+function createItem(text) {
+    const itemRow = document.createElement('li');
+    itemRow.setAttribute('class', 'item_row');
+
+    const item = document.createElement('div');
+    item.setAttribute('class', 'item');
+
+    const name = document.createElement('span');
+    name.setAttribute('class', 'item_name');
+    name.innerText = text;
+    console.log(text);
+
+    const deleteBtn = document.createElement('div');
+    deleteBtn.setAttribute('id', 'break-btn-pink');
+    // deleteBtn.innerHTML = '<li id="break-btn-pink"></li>';
+    deleteBtn.addEventListener('click', () => {
+        items.removeChild(itemRow);
+    });
+
+    item.appendChild(name);
+    item.appendChild(deleteBtn);
+    itemRow.appendChild(item);
+
+    return itemRow;
+}
+// const hashtags = document.querySelector('.hashtags');
+// function addTag() {
+//     const selectedTag = document.querySelector('#hashtag');
+//     const newTag = selectedTag.value;
+//     if (newTag !== '') {
+//         const tag = createTag(newTag);
+//         hashtags.appendChild(tag);
+//         console.log(tag);
+//     }
+// }
+
+// function createTag(newTag) {
+//     const tagRow = document.createElement('li');
+//     tagRow.setAttribute('class', 'hashtag_row');
+
+//     const tag = document.createElement('div');
+//     tag.setAttribute('class', 'tag');
+
+//     const name = document.createElement('span');
+//     name.setAttribute('class', 'tag_name');
+//     name.innerText = newTag;
+//     console.log(newTag);
+
+//     const deleteBtn = document.createElement('button');
+//     deleteBtn.innerHTML = '<li id="break-btn"></li>';
+//     deleteBtn.addEventListener('click', () => {
+//         hashtags.removeChild(tagRow);
+//     });
+
+//     const tagDivider = document.createElement('div');
+//     tagDivider.setAttribute('class', 'tag_divider');
+
+//     tag.appendChild(name);
+//     tag.appendChild(deleteBtn);
+
+//     tagRow.appendChild(tag);
+//     tagRow.appendChild(tagDivider);
+
+//     return tagRow;
+// }
+
+
+// 4.사진 설명 입력칸 > 글자수 표시 및 제한
+$(document).ready(function () {
+    $('#exp-box').on('keyup', function () {
+        $('#text-cnt').html("(" + $(this).val().length + " / 140)");
+        if ($(this).val().length > 140) {
+            $(this).val($(this).val().substring(0, 140));
+            $('#text-cnt').html("(140 / 140)");
+        }
+    });
+});
+
 

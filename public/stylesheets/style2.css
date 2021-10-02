@@ -6,13 +6,24 @@
 }
 
 body {
-  margin: 0px !important;
-  padding: 0px !important;
   font-family: "Nanum Gothic", sans-serif;
+}
+[onclick^="location.href"] {
+  cursor: pointer;
+}
+.title {
+  color: #222222;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 0.5px solid #9e9e9e;
+  width: 80%;
+  padding: 15px;
 }
 .semi-title {
   color: #a96280;
   font-weight: 700;
+  font-size: 16px;
 }
 .clearfix::after {
   content: "";
@@ -162,6 +173,16 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+#break-btn-pink {
+  background: url(../images/break-btn-pink.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  display: block;
+  margin: 0 auto;
+}
 #back-btn {
   background: url(../images/back.svg);
   background-repeat: no-repeat;
@@ -181,7 +202,6 @@ body {
   margin: 62px 0;
   border: none;
 }
-/*(수정요망) view-wrap 바꾼 거 전체 문서에서 수정하기 */
 .wrap {
   margin: 10px auto;
   width: 100%;
@@ -213,6 +233,13 @@ body {
 .spot-profile-grid .text-button {
   grid-column: 3/4;
   grid-row: 2/3;
+}
+#marker-icon {
+  background: url(../images/marker.svg);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 .new-photo {
   margin: auto;
@@ -283,9 +310,12 @@ body {
   border-radius: 2px;
   box-sizing: border-box;
   text-align: start;
-}
-.void-box.rounded {
-  border-radius: 10px;
+  color: #4c4c4c;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  vertical-align: middle;
 }
 .void-box.button {
   margin: 10px auto 10px auto;
@@ -299,8 +329,44 @@ body {
   text-align: center;
   color: #ffffff;
 }
+.void-box#spot-addr {
+  background-color: #f3f3f3;
+  border: 1px solid #727272;
+  font-weight: 400;
+  color: #727272;
+}
+.hashtags {
+  margin: 0 auto 10px auto;
+  width: 100%;
+  height: 42px;
+  padding: 5px;
+  background-color: #a9628042;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #4c4c4c;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+}
 
-#photo-exp-box {
+.item {
+  color: #a96280;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #a96280;
+  border-radius: 16px;
+  padding: 5px 10px;
+  height: 32px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#exp-box {
   margin: 10px auto 5px auto;
   padding: 5px;
   width: 100%;
@@ -313,11 +379,8 @@ body {
   text-align: start;
   font-family: inherit;
 }
-
 .address-font {
   font-size: 15px;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 textarea {
   width: 100%;
@@ -422,14 +485,13 @@ textarea {
 
 #post-profile-photo {
   /* 추후에 text-indent 없애야 함 */
-  width: 24px;
-  height: 24px;
+  width: 27px;
+  height: 27px;
   margin-left: 10px;
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 12px;
+  border-radius: 23.5px;
   border: 1px solid #c4c4c4;
-  text-indent: -9999px;
 }
 #post-profile-name {
   margin-left: 10px;
@@ -447,13 +509,26 @@ textarea {
   font-weight: 400;
   color: #4c4c4c;
 }
-#post-tag {
-  margin-left: 10px;
-  display: inline-block;
+.post-tag {
+  width: calc(100% - 34px);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   font-size: 14px;
   font-weight: 700;
   color: #4c4c4c;
-  vertical-align: middle;
+}
+.post-tag.my {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  color: #4c4c4c;
+}
+.post-tag > li {
+  padding-left: 5px;
 }
 #like-btn {
   background: url(../images/like.svg);
@@ -465,14 +540,29 @@ textarea {
   display: block;
   text-indent: -9999px;
 }
-#post-txt {
-  width: 324px;
-  margin-left: 10px;
-  margin-right: 10px;
+#post-exp {
+  width: calc(100% - 5px);
   font-size: 14px;
   font-weight: 400;
   color: #000000;
   line-height: 160%;
+}
+.addr-box {
+  margin: 10px auto 10px auto;
+  /* width: 80%; */
+  height: 35px;
+  padding: 5px;
+  background-color: #ffffff;
+  border: 1px solid #a96280;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: start;
+  color: #4c4c4c;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  vertical-align: middle;
 }
 .timeline-photo {
   width: 324px;
@@ -481,7 +571,6 @@ textarea {
   background-color: none;
   overflow: hidden;
 }
-
 .timeline-photo.big {
   width: 324px;
   height: 100%;
@@ -542,7 +631,6 @@ textarea {
   width: 24px;
   height: 24px;
   text-indent: -9999px;
-  margin: 0 auto;
 }
 .user-post-grid {
   width: 324px;

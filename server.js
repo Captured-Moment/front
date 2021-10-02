@@ -72,6 +72,16 @@ app.get('/timeline/:something', function (req, res) { // 웹에서 실행할 주
 
 });
 
+app.get('/viewpost/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
+
+    // something에 던질 데이터를 넣어준 것임
+
+    var something = req.params.something;
+
+    res.render('indivPost.ejs', { data: something }); // render를 이용해서 값을 던져줌
+
+});
+
 app.get('/newpost/:something', function (req, res) { // 웹에서 실행할 주소가 localhost:3000/second/블라블라 이거일때를 선언
 
     // something에 던질 데이터를 넣어준 것임
