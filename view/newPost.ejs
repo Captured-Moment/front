@@ -13,43 +13,42 @@
     <script defer src="/javascript/newPost.js"></script>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e&libraries=services"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
 </head>
 
 <body>
     <!-- HEADER -->
     <header class="section">
         <div class="inner clearfix">
-
             <div class="navBar float--left">
-                <div id="break-btn" onclick="location.href='/'">Break Button</div>
+                <div>
+                    <a href="/timeline/timeline" id="back-btn">Back Button</a>
+                </div>
+            </div>
+            <div class="navBar float--right">
+                <div>
+                    <a href="/" id="break-btn">Break Button</a>
+                </div>
             </div>
 
             <div class="logo">
-                <a href="#">순간포착</a>
+                <a href="/">순간포착</a>
             </div>
         </div>
     </header>
-    <script>
-        var geocoder = new kakao.maps.services.Geocoder();
-
-        var coord = new kakao.maps.LatLng(37.56496830314491, 126.93990862062978);
-        var callback = function (result, status) {
-            if (status === kakao.maps.services.Status.OK) {
-                console.log('그런 너를 마주칠까 ' + result[0].address.address_name + '을 못가');
-            }
-        };
-
-        geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-    </script>
     <main>
         <div class="view-wrap">
             <div class="content">
                 <div class="new-photo wrap">
                     <div class="inner"><img id="preview" src="#" alt=""></div>
                 </div>
-                <input class="wrap" type="file" accept="image/*" onchange="loadFile(event)">
+                <div class="filebox wrap">
+                    <input class="upload-name" value="파일을 업로드하십시오" disabled="disabled">
+                    <label for="ex_filename">사진 선택</label>
+                    <input id="ex_filename" class="upload-hidden" type="file" accept="image/*" onchange="loadFile(event)">
+                </div>
                 <div class="wrap">
                     <!-- 스팟 현재 위치 받아오기 -->
                     <div class="semi-title">위치</div>
@@ -69,17 +68,8 @@
             </div>
         </div>
     </main>
-    <script>
-        $(document).ready(function () {
-            $('#photo-exp-box').on('keyup', function () {
-                $('#text-cnt').html("(" + $(this).val().length + " / 140)");
-                if ($(this).val().length > 140) {
-                    $(this).val($(this).val().substring(0, 140));
-                    $('#text-cnt').html("(140 / 140)");
-                }
-            });
-        });
-    </script>
+    
+
 
     <!-- FOOTER -->
     <div class="footer">
@@ -90,7 +80,7 @@
                     <li><a id="main-btn" href="/">Main</a></li>
                     <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
                     <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
-                    <li><a href="#" id="setting-btn">Setting</a></li>
+                    <li><a href="/newpost/newpost" id="add-btn">Add Btn</a></li>
                 </ul>
             </div>
         </div>
