@@ -40,22 +40,39 @@ const items = document.querySelector('.hashtags');
 const input = document.querySelector('#hashtag');
 function addTag() {
     const text = input.value;
-    if (text !== '') {
+    const tag_cnt = document.getElementsByClassName('item');
+    const tag_length = tag_cnt.length;
+
+    let overlap = false;
+    function checkOverlap() {
+        for (i = 0; i < tag_length; i++) {
+            if (tag_cnt[i].title === text) {
+                overlap = true;
+                break;
+            } else {
+                overlap = false;
+            }
+        }
+    }
+    checkOverlap();
+
+    if (text !== '' && tag_length < 3 && overlap === false) {
         const item = createItem(text);
         items.appendChild(item);
+    } else if (tag_cnt.length >= 3) {
+        alert("해시태그는 최대 3개까지 입력가능합니다.");
+    } else if (overlap === true) {
+        alert("이미 추가한 해시태그입니다.");
     }
 }
-//수정해야할 부분
-// 같은 해시태그 있으면 아무 변화 없게 하기
-// 해시태그 수 3개 이상 제한.. 경고창..
-// 불리언변수로 함수조건 설정하기
-// 해시태그 디자인
+
 function createItem(text) {
     const itemRow = document.createElement('li');
     itemRow.setAttribute('class', 'item_row');
 
     const item = document.createElement('div');
     item.setAttribute('class', 'item');
+    item.setAttribute('title', `${text}`);
 
     const name = document.createElement('span');
     name.setAttribute('class', 'item_name');
@@ -75,47 +92,6 @@ function createItem(text) {
 
     return itemRow;
 }
-// const hashtags = document.querySelector('.hashtags');
-// function addTag() {
-//     const selectedTag = document.querySelector('#hashtag');
-//     const newTag = selectedTag.value;
-//     if (newTag !== '') {
-//         const tag = createTag(newTag);
-//         hashtags.appendChild(tag);
-//         console.log(tag);
-//     }
-// }
-
-// function createTag(newTag) {
-//     const tagRow = document.createElement('li');
-//     tagRow.setAttribute('class', 'hashtag_row');
-
-//     const tag = document.createElement('div');
-//     tag.setAttribute('class', 'tag');
-
-//     const name = document.createElement('span');
-//     name.setAttribute('class', 'tag_name');
-//     name.innerText = newTag;
-//     console.log(newTag);
-
-//     const deleteBtn = document.createElement('button');
-//     deleteBtn.innerHTML = '<li id="break-btn"></li>';
-//     deleteBtn.addEventListener('click', () => {
-//         hashtags.removeChild(tagRow);
-//     });
-
-//     const tagDivider = document.createElement('div');
-//     tagDivider.setAttribute('class', 'tag_divider');
-
-//     tag.appendChild(name);
-//     tag.appendChild(deleteBtn);
-
-//     tagRow.appendChild(tag);
-//     tagRow.appendChild(tagDivider);
-
-//     return tagRow;
-// }
-
 
 // 4.사진 설명 입력칸 > 글자수 표시 및 제한
 $(document).ready(function () {
