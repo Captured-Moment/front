@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/stylesheets/style2.css">
     <link rel="stylesheet" href="/stylesheets/footer.css">
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ee35c4b2211354612f0002ffaed8c02e"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script defer src="/javascript/myMap.js"></script>
 
 </head>
@@ -19,11 +20,14 @@
     <!-- HEADER -->
     <header class="section">
         <div class="inner clearfix">
-            <div class="navBar float--left">
-                <div id="break-btn" onclick="location.href='/'" >Break Button</div>
+            <div class="navBar float--right">
+                <div>
+                    <a id="break-btn" href="/">Break Button</a>
+                </div>
             </div>
+
             <div class="logo">
-                <a href="#">순간포착</a>
+                <a href="/">순간포착</a>
             </div>
         </div>
     </header>
@@ -37,10 +41,11 @@
                 </div>
             </div>
             <div class="gap"></div>
-            <div class="username">닉네임</div>
+            <!-- <div class="username">닉네임</div> -->
+            <div class="username">김현애</div>
             <!-- ** 수정페이지로 이동시키기 -->
-            <div class="text-button2" onclick="location.href='/'">수정</div>
-            <div class="user-bio">자기소개를 입력하십시오.</div>
+            <div class="text-button2" onclick="location.href='/myaccount/myaccount'">수정</div>
+            <div class="user-bio">안녕하세요. 심채영입니다...</div>
         </div>
         <div class="myPage-tab">
             <ul class="myPage-tab-container">
@@ -55,52 +60,63 @@
             <div class="item-wrap">
                 <div class="wrap my-post-label">
                     <div class="flex-container">
-                        <span><img src="../images/marker.svg"></span>
-                        <span class="address-font">서울특별시 종로구 00동</span>
+                        <span id="marker-icon"></span>
+                        <span class="address-font">서울특별시 용산구 청파동</span>
                     </div>
-                    <div id="post-date">2021년 6월 28일</div>
+                    <div id="post-date">2021년 9월 29일</div>
                 </div>
                 <div class="wrap timeline-photo">
-                    <a href="myIndivPost/myIndivPost"><img class="img-thumbnail"
-                            src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+                    <a href="/mypost/mypost"><img class="img-thumbnail"
+                            src="https://user-images.githubusercontent.com/68391767/135757297-741d2ecf-c99d-4767-9e59-796e45da4b0c.png"></a>
                 </div>
-                <div class="wrap clearfix">
-                    <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
-                    <div id="gear-btn" class="float--right"></div>
+                <div class="wrap my-post-label">
+                    <ul class="post-tag">
+                        <li>#건축</li>
+                        <li>#스냅샷</li>
+                        <li>#일상</li>
+                    </ul>
+                    <div id="gear-btn" onclick="location.href='/mypost-change'"></div>
                 </div>
             </div>
             <div class="item-wrap">
                 <div class="wrap my-post-label">
                     <div class="flex-container">
-                        <span><img src="../images/marker.svg"></span>
-                        <span class="address-font">서울특별시 종로구 00동</span>
+                        <span id="marker-icon"></span>
+                        <span class="address-font">서울특별시 강서구 마곡동</span>
                     </div>
-                    <div id="post-date">2021년 6월 28일</div>
+                    <div id="post-date">2021년 9월 28일</div>
                 </div>
                 <div class="wrap timeline-photo">
-                    <a href="myIndivPost.ejs"><img class="img-thumbnail"
-                            src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+                    <a href="/mypost/mypost"><img class="img-thumbnail"
+                            src="https://user-images.githubusercontent.com/68391767/135757777-24317b38-d3b3-4e12-9734-45d8ff73d449.png"></a>
                 </div>
-                <div class="wrap clearfix">
-                    <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
-                    <div id="gear-btn" class="float--right"></div>
+                <div class="wrap my-post-label">
+                    <ul class="post-tag">
+                        <li>#여행</li>
+                        <li>#자연</li>
+                    </ul>
+                    <div id="gear-btn" onclick="location.href='/mypost-change'"></div>
                 </div>
             </div>
             <div class="item-wrap">
                 <div class="wrap my-post-label">
                     <div class="flex-container">
-                        <span><img src="../images/marker.svg"></span>
-                        <span class="address-font">서울특별시 종로구 00동</span>
+                        <span id="marker-icon"></span>
+                        <span class="address-font">서울특별시 영등포구 여의도동</span>
                     </div>
-                    <div id="post-date">2021년 6월 28일</div>
+                    <div id="post-date">2021년 8월 12일</div>
                 </div>
                 <div class="wrap timeline-photo">
-                    <a href="myIndivPost.ejs"><img class="img-thumbnail"
-                            src="https://www.royalpalace.go.kr/content/images/season/fall/1.jpg"></a>
+                    <a href="/mypost/mypost"><img class="img-thumbnail"
+                            src="https://user-images.githubusercontent.com/68391767/135757983-a3f55b85-b5c3-4795-971d-3536b16abc06.png"></a>
                 </div>
-                <div class="wrap clearfix">
-                    <div id="post-tag" class="float--left">#풍경 #여행 #자연</div>
-                    <div id="gear-btn" class="float--right"></div>
+                <div class="wrap my-post-label">
+                    <ul class="post-tag">
+                        <li>#풍경</li>
+                        <li>#스냅샷</li>
+                        <li>#일상</li>
+                    </ul>
+                    <div id="gear-btn" onclick="location.href='/mypost-change'"></div>
                 </div>
             </div>
         </div>
@@ -112,7 +128,7 @@
                 <ul class="clearfix">
                     <li><a id="main-btn" href="/">Main</a></li>
                     <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
-                    <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+                    <li><a id="mypage-btn" href="#">MyPage</a></li>
                     <li><a href="#" id="setting-btn">Setting</a></li>
                 </ul>
             </div>
