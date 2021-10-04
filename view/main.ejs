@@ -26,7 +26,7 @@
   
       <div>
         <a href="/login" class="login">
-          <span>log in</span>
+          <span>김현애</span>
         </a>
       </div>
     </div>
@@ -56,7 +56,7 @@
         <ul class="clearfix">
           <li><a id="main-btn" href="/">Main</a></li>
           <li><a id="friends-btn" href="/timeline/timeline">TimeLine</a></li>
-          <li><a id="mypage-btn" href="/mypage/mypage">MyPage</a></li>
+          <li><a id="mypage-btn" href="/mypage/김현애">MyPage</a></li>
           <!-- <li><div id="toggle-btn"></div></li> -->
           <li><a href="#" id="setting-btn">Setting</a></li>
         </ul>
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
       mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨 
+        level: 10 // 지도의 확대 레벨 
       }; 
   
   var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -182,17 +182,34 @@ document.addEventListener('DOMContentLoaded', function(){
 
   
   // 마커가 표시될 위치입니다 
-  var markerPosition1  = new kakao.maps.LatLng(37.458479760269256, 126.63678289519116); 
-
-  // 마커를 생성합니다
+  var mP1 = new kakao.maps.LatLng(37.458479760269256, 126.63678289519116); 
+  var mP2 = new kakao.maps.LatLng(37.54667913449386, 126.96462722456926);
+  var mP3 = new kakao.maps.LatLng(37.52862607541303, 126.93314247059297);
+  var mP4 = new kakao.maps.LatLng(37.26656556920354, 126.99931962865256);
+  var mP5 = new kakao.maps.LatLng(37.62077042738591, 126.7107485859373);
+  
+  //마커를 생성합니다
   var marker = new kakao.maps.Marker({
-      position: markerPosition1
+    position: mP1
   });
-
+  var marker2 = new kakao.maps.Marker({
+    position: mP2
+  });
+  var marker3 = new kakao.maps.Marker({
+    position: mP3
+  });
+  var marker4 = new kakao.maps.Marker({
+    position: mP4
+  });
+  var marker5 = new kakao.maps.Marker({
+    position: mP5
+  });
   // 마커가 지도 위에 표시되도록 설정합니다
   marker.setMap(map);
-
-  
+  marker2.setMap(map);
+  marker3.setMap(map);
+  marker4.setMap(map);
+  marker5.setMap(map);
 </script>
 
 

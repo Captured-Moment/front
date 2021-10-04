@@ -50,15 +50,21 @@
         </div>
         <div class="wrap">
             <label for="name" class="semi-title">이름</label>
-            <input type="text" id="name" name="name" class="void-box" required>
+            <div id="spot-addr" class="void-box">김현애</div>
+            <!-- 원본은 밑줄.. 절대 삭제 금지 -->
+            <!-- <input type="text" id="name" name="name" class="void-box" required> -->
         </div>
         <div class="wrap">
             <label for="nickname" class="semi-title">닉네임</label>
-            <input type="text" name="nickname" class="void-box" required>
+            <input value="김현애" type="text" name="nickname" class="void-box" required>
+            <!-- 원본은 밑줄.. 절대 삭제 금지 -->
+            <!-- <input type="text" name="nickname" class="void-box" required> -->
         </div>
         <div class="wrap">
             <label for="id" class="semi-title">E-mail</label>
-            <input type="email" name="id" class="void-box" required>
+            <input value="abcd1234@apps.com" type="email" name="id" class="void-box" required>
+            <!-- 원본은 밑줄.. 절대 삭제 금지 -->
+            <!-- <input type="email" name="id" class="void-box" required> -->
         </div>
         <div class="wrap">
             <label for="pw" class="semi-title">비밀번호</label>
@@ -71,10 +77,13 @@
         <div class="wrap">
             <label for="user-bio" class="semi-title">인사말</label>
             <textarea id="exp-box" name="user-bio" cols="30" rows="10"
-                placeholder="인사말을 입력하시오. (최대 100자)"></textarea>
-            <div id="text-cnt">(0 / 100)</div>
+                placeholder="인사말을 입력하시오. (최대 100자)">안녕하세요. 심채영입니다...</textarea>
+            <!-- 원본은 밑줄.. 절대 삭제 금지 -->
+            <!-- <textarea id="exp-box" name="user-bio" cols="30" rows="10"
+                placeholder="인사말을 입력하시오. (최대 100자)"></textarea> -->
+            <div id="text-cnt">(16 / 100)</div>
         </div>
-        <input type="submit" formaction="#" formenctype=".*" value="저장" class="void-box button wrap"></input>
+        <input class="void-box button wrap" type="submit" formaction="#" formenctype=".*" value="저장" onclick="location.href='/mypage/mypage'">
 
     </main>
     <!-- FOOTER -->

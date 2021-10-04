@@ -11,7 +11,7 @@ body {
 [onclick^="location.href"] {
   cursor: pointer;
 }
-img[scr="#"] {
+img[src="#"] {
   background: url(../images/add.svg);
   background-repeat: no-repeat;
   display: block;

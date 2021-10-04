@@ -39,13 +39,11 @@
         <div class="view-wrap">
             <div class="content">
                 <div class="new-photo wrap">
-                    <div class="inner"><img id="preview" src="#" alt=""></div>
+                    <div class="inner"><img id="preview" src="https://user-images.githubusercontent.com/68391767/135757297-741d2ecf-c99d-4767-9e59-796e45da4b0c.png" alt=""></div>
                 </div>
                 <div class="filebox wrap">
-                    <input class="upload-name" value="파일을 업로드하십시오" disabled="disabled">
+                    <div class="upload-name">학교.jpg</div>
                     <label for="ex_filename">사진 선택</label>
-                    <input id="ex_filename" class="upload-hidden" type="file" accept="image/*"
-                        onchange="loadFile(event)">
                 </div>
                 <div class="wrap">
                     <!-- 스팟 현재 위치 받아오기 -->
@@ -65,16 +63,35 @@
                         <option value="스냅샷">스냅샷</option>
                     </select>
                     <div>
-                        <ul class="hashtags"></ul>
+                        <ul class="hashtags">
+                            <li class="item_row">
+                                <div class="item">
+                                    <span class="item_name" title="건축">건축</span>
+                                    <div id="break-btn-pink"></div>
+                                </div>
+                            </li>
+                            <li class="item_row">
+                                <div class="item">
+                                    <span class="item_name" title="스냅샷">스냅샷</span>
+                                    <div id="break-btn-pink"></div>
+                                </div>
+                            </li>
+                            <li class="item_row">
+                                <div class="item">
+                                    <span class="item_name" title="일상">일상</span>
+                                    <div id="break-btn-pink"></div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="wrap">
                     <label for="photo-exp" class="semi-title">설명</label>
                     <textarea id="exp-box" name="photo-exp" cols="30" rows="10"
-                        placeholder="사진을 설명하시오 (최대 140자)"></textarea>
-                    <div id="text-cnt">(0 / 140)</div>
+                        placeholder="사진을 설명하시오 (최대 140자)">날씨 좋은 날에 학교에서 찍은 사진</textarea>
+                    <div id="text-cnt">(19 / 140)</div>
                 </div>
-                <input onclick="location.href='/'" type="submit" formaction="#" formenctype=".*" value="저장" class="void-box button wrap">
+                <input class="void-box button wrap" type="submit" formaction="#" formenctype=".*" value="저장" onclick="location.href='/mypost/mypost'">
             </div>
         </div>
     </main>

@@ -25,7 +25,7 @@ $(document).ready(function () {
 //2. 주소표출 (좌표값=>주소로 변환하여 표출)
 var geocoder = new kakao.maps.services.Geocoder();
 
-var coord = new kakao.maps.LatLng(37.58034780425315, 126.97711709628018);
+var coord = new kakao.maps.LatLng(37.54679397126236, 126.96469159786623);
 var callback = function (result, status) {
     if (status === kakao.maps.services.Status.OK) {
         const element = document.getElementById('spot-addr');
