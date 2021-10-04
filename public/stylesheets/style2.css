@@ -11,6 +11,17 @@ body {
 [onclick^="location.href"] {
   cursor: pointer;
 }
+img[scr="#"] {
+  background: url(../images/add.svg);
+  background-repeat: no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  position: relative;
+  top: 63.5px;
+  left: 63.5px;
+}
 .title {
   color: #222222;
   font-weight: 700;
