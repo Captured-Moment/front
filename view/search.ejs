@@ -336,7 +336,7 @@ function getListItem(index, places) {
     var el = document.createElement('li'),
     itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
                 '<div class="info">' +
-                '   <a href="#" style="color:#A96280;font-weight:bold;">SPOT : '+ places.place_name + '</a>';
+                '   <a href="/timeline/숙명여대" style="color:#A96280;font-weight:bold;">SPOT : '+ places.place_name + '</a>';
 
     if (places.road_address_name) {
         itemStr += '    <span>' + places.road_address_name + '</span>' +
