@@ -81,6 +81,7 @@ function createItem(text) {
 
     const deleteBtn = document.createElement('div');
     deleteBtn.setAttribute('id', 'break-btn-pink');
+    // deleteBtn.innerHTML = '<li id="break-btn-pink"></li>';
     deleteBtn.addEventListener('click', () => {
         items.removeChild(itemRow);
     });
