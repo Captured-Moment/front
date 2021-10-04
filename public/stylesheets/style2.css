@@ -11,6 +11,7 @@ body {
 [onclick^="location.href"] {
   cursor: pointer;
 }
+<<<<<<< Updated upstream
 img[scr="#"] {
   background: url(../images/add.svg);
   background-repeat: no-repeat;
@@ -18,6 +19,15 @@ img[scr="#"] {
   width: 32px;
   height: 32px;
   text-indent: -9999px;
+=======
+img[src="#"] {
+  background: url(../images/add.svg);
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -99999px;
+>>>>>>> Stashed changes
   position: relative;
   top: 63.5px;
   left: 63.5px;
